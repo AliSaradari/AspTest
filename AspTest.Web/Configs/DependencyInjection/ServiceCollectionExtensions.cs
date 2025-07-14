@@ -1,4 +1,5 @@
 ﻿using AspTest.Common.UnitOfWorks;
+using AspTest.Configs.BackgroundServices;
 using AspTest.DataAccess.DbContexts;
 using AspTest.DataAccess.Repositories;
 using AspTest.DataAccess.UnitOfWorks;
@@ -22,6 +23,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ProvinceRepository, EFProvinceRepository>();
         services.AddScoped<CountyService, CountyAppService>();
         services.AddScoped<CountyRepository, EFCountyRepository>();
+
+        services.AddHostedService<UpdateCityNamesBackgroundService>();
         return services;
     }
 }
