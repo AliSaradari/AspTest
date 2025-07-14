@@ -35,9 +35,9 @@ public class ProvinceAppService(
         await unitOfWork.Complete();
     }
 
-    public void Delete(int id)
+    public async Task Delete(int id)
     {
-        repository.Delete(id);
+        await repository.Delete(id);
     }
 
     public async Task<List<GetAllProvinceDto>> GetAll()
